@@ -97,7 +97,7 @@ program convert_mpas
     !
     ! Open output file
     !
-    if (file_output_open('latlon.nc', output_handle, mode=FILE_MODE_APPEND, nRecords=nRecordsOut) /= 0) then
+    if (file_output_open('latlon.nc', output_handle, mode=FILE_MODE_CLOBBER, nRecords=nRecordsOut) /= 0) then
         write(0,*) 'Error: Problems opening output file'
         stat = mpas_mesh_free(source_mesh)
         stat = target_mesh_free(destination_mesh)
